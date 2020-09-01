@@ -4,7 +4,9 @@ const fs = require('fs-extra')
 
 module.exports = make
 
-function make(filepath, { extendsStrategy, addComments }) {
+function make(filepath, options) {
+	const extendsStrategy = options.extendsStrategy;
+	const addComments = options.addComments;
 	try {
 		const tsconfig = require(filepath)
 
